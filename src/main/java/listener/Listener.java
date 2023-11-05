@@ -1,12 +1,16 @@
 package listener;
 
+import java.io.IOException;
+
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import stepdefinitions.BaseTest;
 
-public class Listener extends BaseTest {
+public class Listener extends BaseTest implements ITestListener  {
 	@Override
 	public void onTestSuccess(ITestResult result) 
 	{

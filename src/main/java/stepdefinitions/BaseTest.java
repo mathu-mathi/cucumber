@@ -1,6 +1,9 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.logging.LogManager;
+
+import org.testng.annotations.BeforeMethod;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -34,5 +37,9 @@ public class BaseTest {
 		extent.attachReporter(spark);
 		logger.info("BaseTest:setDriver:Spark report configured");
 		WebDriver driver = BaseTest.getBrowserType("browserName", isHeadless);
+	}
+	public static Object getDriver() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
