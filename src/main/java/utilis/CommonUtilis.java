@@ -1,12 +1,16 @@
 package utilis;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.apache.logging.log4j.core.util.FileUtils;
 import org.apache.poi.hpsf.Date;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
