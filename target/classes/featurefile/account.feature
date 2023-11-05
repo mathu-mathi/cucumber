@@ -1,6 +1,7 @@
 Feature: Salesforce Account Management
 
   Scenario: Creating a New Technology Partner Account
+  
     Given I am on the Salesforce login page
     When I provide valid <username> and <password> data
     And I click the login button
@@ -12,7 +13,9 @@ Feature: Salesforce Account Management
     And I set customer priority as "High"
     And I click the save button
     Then the new account page is displayed with the entered account details
+    
  Scenario: Creating a New View in Accounts
+ 
     Given I am on the Salesforce application home page with correct <username>
     When I click on the "Accounts" link on the home page
     Then the Accounts page is displayed with correct <username>
@@ -22,6 +25,7 @@ Feature: Salesforce Account Management
     Then the newly added view should be displayed in the account view list
     
   Scenario: Editing a View in Accounts
+  
     Given I am on the Salesforce application home page with correct <username>
     When I click on the "Accounts" link on the home page
     Then the Accounts page is displayed with correct <username>
@@ -37,6 +41,7 @@ Feature: Salesforce Account Management
     And the data in the list will have all account names that have "<a>" in the text
      
      Scenario: Merging Accounts
+     
     Given I have launched the Salesforce application and logged in with positive <username> and <password>
     When I click on the "Accounts" link on the home page
     Then the Accounts page is displayed with correct <username>

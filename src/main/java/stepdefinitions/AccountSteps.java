@@ -13,8 +13,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
 import io.cucumber.java.en.*;
+@Listeners(Listener.class)
 public class AccountSteps {
 //hooks in cucumber
 	@Before

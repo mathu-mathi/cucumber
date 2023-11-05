@@ -1,15 +1,24 @@
 package stepdefinitions;
 
+import java.util.logging.LogManager;
+
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import io.cucumber.core.logging.Logger;
 import io.cucumber.java.en.*;
 
-public class loginSteps {
+@Listeners(Listener.class)
+public class loginSteps extends BaseTest{
 	WebDriver driver;
 	@Given("User lands on login page")
 	public void user_lands_on_login_page() {
