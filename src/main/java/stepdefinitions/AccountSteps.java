@@ -28,7 +28,7 @@ public class accountsteps extends BaseTest{
        
 	}
 
-	@Then("User clicks on new account fill account details")
+	@Then("User clicks on new account to fill account details")
 	public void user_clicks_on_new_account_fill_account_details() throws Throwable {
 		WebElement new_Element = driver.findElement(By.xpath("//input[contains(@title,'New')]"));
 		clickObj(new_Element, "new_Element");
