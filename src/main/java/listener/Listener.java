@@ -23,7 +23,7 @@ public class Listener extends BaseTest implements ITestListener  {
 		BaseTest.test.fail(result.getName()+"Test failed");
 		BaseTest.test.pass(MarkupHelper.createLabel("fail",ExtentColor.RED));
 		try {
-			BaseTest.test.addScreenCaptureFromPath(CommonUtils.getScreenShot(BaseTest.getDriver()));
+			BaseTest.test.addScreenCaptureFromPath(CommonUtilis.getScreenShot(BaseTest.getDriver()));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

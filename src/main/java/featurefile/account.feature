@@ -1,6 +1,6 @@
 Feature: Salesforce Account Management
 
-  Scenario: Creating a New Technology Partner Account
+  Scenario:TC10: Creating a New Technology Partner Account
   
     Given I am on the Salesforce login page
     When I provide valid <username> and <password> data
@@ -14,7 +14,7 @@ Feature: Salesforce Account Management
     And I click the save button
     Then the new account page is displayed with the entered account details
     
- Scenario: Creating a New View in Accounts
+ Scenario:TC11:Creating a New View in Accounts
  
     Given I am on the Salesforce application home page with correct <username>
     When I click on the "Accounts" link on the home page
@@ -24,7 +24,7 @@ Feature: Salesforce Account Management
     And I click the save button
     Then the newly added view should be displayed in the account view list
     
-  Scenario: Editing a View in Accounts
+  Scenario: TC12:Editing a View in Accounts
   
     Given I am on the Salesforce application home page with correct <username>
     When I click on the "Accounts" link on the home page
@@ -33,14 +33,14 @@ Feature: Salesforce Account Management
     And I click on the "Edit" link on the Accounts page
     Then the "<view name>" edit page is displayed
     When I change the "<view name>" to "<new view name>"
-    And I select the filter field "<Account name>", operator "<contains>", Value "<a>"
+    And I select the filter field "<Account name>", operator "<contains>", Value "<ram>"
     And I select "Last activity" in Select fields to display
     And I click on the save button
     Then the view page with "<new view name>" in the drop-down is displayed
     And the view will have the "Last activity" column added
     And the data in the list will have all account names that have "<a>" in the text
      
-     Scenario: Merging Accounts
+     Scenario: TC13:Merging Accounts
      
     Given I have launched the Salesforce application and logged in with positive <username> and <password>
     When I click on the "Accounts" link on the home page
@@ -58,3 +58,14 @@ Feature: Salesforce Account Management
     Then a new pop-up for account merge confirmation is displayed
     And once the accounts are merged, the account page is displayed
     And the newly merged account is listed in the recently viewed view
+    
+ Scenario: TC14:Create account report
+Given User login page is launched
+ When Valid Username enters username field
+ And  Valid Password enters Password field
+ When User clicks on Login button
+ Then User clicks on account tab
+ And user clicks on accounts with last activity
+ Then user selects the dates in unsaved report field
+ And user clicks on save report
+ And close the browser

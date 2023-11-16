@@ -1,42 +1,43 @@
 Feature: Login feature
          I want to use this template for my feature file
-  Scenario: Validate login with correct credentials
-          Given User lands on login page
-          When User enters valid username and valid password
-          And  User clicks on login button
-          Then User should see home page
-          But User should not see home page
-
- Scenario: Validate login with in valid  credentials
-          Given User lands on login page
-          When User enters valid username and in-valid password
-          When User clicks on login button
-          Then User should see error message
-
-  @tag2
-  Scenario:  login remember me
-         Given User lands on login page             
-	       When User enter the username and enter the password and check the remember me checkbox 
-	       When User click on loginbutton
-	       Then User should be see HomePage and click on user menu 
-	       When User select on logout
-	       Then User should see reloginpage
-	       Then check the username is displayed
-	       
-Scenario: Forgot password
-
-       Given user is on login page
-	     When click on forgot password link
-	     When user is on ForgotPasswordPage and enter username to get the mail
-	     Then click on continue button
-	     When user is on "CheckMailPage"
-	     Then check for ReturnToLogin Button
-	       
-Scenario: Validate login ErrorMessage
-           
-          Given user is on login page
-          When User enters invalid username and in-valid password
-          When User clicks on login button
-          Then User should see error message
-   
-    
+  
+Scenario: TC01:Verify Login error with Valid Username and Empty Password field
+Given User login page is launched
+ When Username enters username field
+  And Password field is empty
+ And login button is clicked
+ Then Error msg Displayed on login page
+ And close the browser
+ 
+Scenario: TC02:Verify Login with valid username and password 
+ Given User login page is launched
+ When Valid Username enters username field
+ And  Valid Password enters Password field
+ When User clicks on Login button
+ And close the browser
+ 
+Scenario: TC03:Test the remember username check box  
+ Given User login page is launched
+ When Valid Username enters username field
+ And  Valid Password enters Password field
+ When User clicks on Login button
+ When User clicks on user menu dropdown
+ And logout menu is clicked
+ And close the browser
+ 
+Scenario: TC04A:Test forgot password link
+ Given User login page is launched
+ When User clicks forgot password link
+ Then SalesForce forgot password page should be displayed
+ When Valid username enters username field in forgot password page
+ And Continue button is clicked
+ Then Password reset message page is displayed
+ And close the browser
+ 
+Scenario: TC04B:Test with wrong Username and wrong password
+ Given User login page is launched
+ When Wrong username enters username field
+ And Wrong password enters password field
+ When User clicks on Login button 
+ Then Error message Displayed on login page
+ And close the browser
